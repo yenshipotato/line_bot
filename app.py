@@ -67,6 +67,8 @@ def handle_message(event):
         reply_text = "-1"
     elif(text == "紫薇" or text == "子緯"):
         reply_text = "-3"
+    elif(text == "御倫" or text == "鞋子"):
+        reply_text = "-4"
     elif(text == "yhboys"):
         reply_text = "同性戀姦淫"
 
@@ -95,6 +97,9 @@ def handle_message(event):
     elif(reply_text == "-3"):
         message = ImageSendMessage(original_content_url="https://cdn.discordapp.com/attachments/758157661740073031/925615766076805130/78268391_826250951130198_8204874367138529280_n.jpg",
                                    preview_image_url="https://cdn.discordapp.com/attachments/758157661740073031/925615637550739476/78268391_826250951130198_8204874367138529280_n_2.jpg")
+    elif(reply_text != "-4"):
+        message = ImageSendMessage(original_content_url="https://ppt.cc/fDtsNx", 
+                               preview_image_url="https://ppt.cc/fDtsNx")
     elif(reply_text != "-2"):
         message = TextSendMessage(reply_text)
 ##################################################################################################################################################
