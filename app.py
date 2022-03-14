@@ -69,6 +69,10 @@ def handle_message(event):
         reply_text = "-3"
     elif(text == "御倫" or text == "鞋子"):
         reply_text = "-4"
+    elif(text == "紅豆" or text == "手拋紅豆"):
+        reply_text = "-5"
+    elif(text == "什麼意思"):
+        reply_text = "-69"
     elif(text == "yhboys"):
         reply_text = "同性戀姦淫"
 
@@ -98,8 +102,13 @@ def handle_message(event):
         message = ImageSendMessage(original_content_url="https://cdn.discordapp.com/attachments/758157661740073031/925615766076805130/78268391_826250951130198_8204874367138529280_n.jpg",
                                    preview_image_url="https://cdn.discordapp.com/attachments/758157661740073031/925615637550739476/78268391_826250951130198_8204874367138529280_n_2.jpg")
     elif(reply_text == "-4"):
-        message = ImageSendMessage(original_content_url="https://ppt.cc/fDtsNx", 
-                                   preview_image_url="https://ppt.cc/fDtsNx")
+        message = ImageSendMessage(original_content_url="https://ppt.cc/fDtsNx@.jpg", 
+                                   preview_image_url="https://ppt.cc/fDtsNx@.jpg")
+    elif(reply_text == "-5"):
+        message = AudioSendMessage(original_content_url="https://storage.risu.io/Wjp795L6iRgb5dYuYDqwo9te?GoogleAccessId=storage%40risu-248412.iam.gserviceaccount.com&Expires=1647371708&Signature=N4KKvSDwf1Ezy3Y%2B%2FZqGoaSJqOLxbtRbp9NvUMnIbX71b9l9Pb79yY%2FYwayMtDDX4r4fChfhRk3rSYHwqAhgrO9f3QSmGQPGC2Vd9RhYxM6Pijfb%2FsRRp%2BB3jpOYt2AiUHXxCQo74Zk4i6Ncr7mLtD6VFeL%2BLKJOCcbxnrEID6vxQA88zn2oLORIH00a8%2FIOkl3vLdJRqwgFQeDLjn0uNQguhji7D4txlZgmui0SUd17UaAUA2x19FX5m7ZPUQwcHiYhlKA%2FPWFHlTCq7GYHWdp2yz%2FeiqzmZINeVIJQBwC2T%2B1h%2B4owkF2ucuZwuz1hFSyuJyRR6fPtXDdFL7lNOg%3D%3D&response-content-disposition=attachment%3B+filename%3D%22%253F%253F%253F%253F+%2528192+kbps%2529.mp3%22%3B+filename%2A%3DUTF-8%27%27%25E6%2589%258B%25E6%258B%258B%25E7%25B4%2585%25E8%25B1%2586%2520%2528192%2520kbps%2529.mp3",duration=6500)
+    elif(reply_text == "-69"):
+        message = ImageSendMessage(original_content_url="https://ppt.cc/fRybxx@.jpg",
+                                   preview_image_url="https://ppt.cc/fRybxx@.jpg")
     elif(reply_text != "-2"):
         message = TextSendMessage(reply_text)
 ##################################################################################################################################################
