@@ -69,9 +69,9 @@ def handle_message(event):
         reply_text = "-3"
     elif(text == "御倫" or text == "鞋子"):
         reply_text = "-4"
+
     elif(text == "yhboys"):
         reply_text = "同性戀姦淫"
-
     elif(text == "塵抑"):
         reply_text = "叫三小 老娘忙著做愛你知道嗎"
     elif(text == "晨瑋"):
@@ -80,8 +80,6 @@ def handle_message(event):
         reply_text = "臭大奶婊子"
     elif(text == "文賓"):
         reply_text = "只剩顏值的智障馬鈴薯"
-    elif(text == "御倫"):
-        reply_text = "誰?"
     elif(text == "抽"):
         reply_text = "抽你媽B啦幹 當老娘情色機器人膩"
     elif("slut_ " in text):
@@ -105,22 +103,6 @@ def handle_message(event):
 ##################################################################################################################################################
 
     line_bot_api.reply_message(event.reply_token, message)
-
-
-def respond():
-
-    randnum = random.randint(0, 65535)
-
-    if(randnum % 30 == 0 or (randnum % 30 >= 4 and randnum % 30 <= 10)):
-        return "閉嘴 婊子"
-    elif(randnum % 30 == 1):
-        return "一齊做愛 生活無礙"
-    elif(randnum % 30 == 2):
-        return "你們都是tucking birch"
-    elif(randnum % 30 == 3):
-        return "不會餓肚子  愛愛共產"
-    else:
-        return "-2"
 
 
 if __name__ == "__main__":
