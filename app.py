@@ -121,22 +121,6 @@ def handle_message(event):
     line_bot_api.reply_message(event.reply_token, message)
 
 
-def respond():
-
-    randnum = random.randint(0, 65535)
-
-    if(randnum % 30 == 0 or (randnum % 30 >= 4 and randnum % 30 <= 10)):
-        return "閉嘴 婊子"
-    elif(randnum % 30 == 1):
-        return "一齊做愛 生活無礙"
-    elif(randnum % 30 == 2):
-        return "你們都是tucking birch"
-    elif(randnum % 30 == 3):
-        return "不會餓肚子  愛愛共產"
-    else:
-        return "-2"
-
-
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
