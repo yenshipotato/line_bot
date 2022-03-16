@@ -107,7 +107,7 @@ def handle_message(event):
         message = ImageSendMessage(original_content_url="https://ppt.cc/fDtsNx@.jpg", 
                                    preview_image_url="https://ppt.cc/fDtsNx@.jpg")
     elif(reply_text == "-5"):
-        message = AudioSendMessage(original_content_url="https://media30.melon365.com/other/2012/5-13/mp340700400545955a2651f7437990e24cb466087b07001.mp3,duration=250000"
+        message = AudioSendMessage(original_content_url="https://media30.melon365.com/other/2012/5-13/mp340700400545955a2651f7437990e24cb466087b07001.mp3", duration=250000)
         message = VideoSendMessage(original_content_url="https://storage.risu.io/EZWiLG6a4kTPjg1KBr7pHj5r?GoogleAccessId=storage%40risu-248412.iam.gserviceaccount.com&Expires=1647445592&Signature=Py9wDh9ZRPVzF1iiyUpQt0gdNK2%2BDgxRDq%2BaMV8wzXvyYW6YPOO179AVd6%2Fl0xjmTsH9JhtodBQZQH%2BQKSHCQrg8EJYLLKSXz5luouHH4xE%2BVQgCneVzfwgp80ZjzNw%2FJevY8PSalr4EslEjHPdFCz4uTGJv5mVtdmaUr1k4SFWNCy13eTz%2BDa4qthYqdMdYwilBAQOHqvZrJ5GRw3iKL2zsZep0xPoTXIMC5OutDgdpE9p4Rsoc7u5f9URaMf6mhxSeJ%2FEBD5DMLjTsHzCU2FArQ9KNZF%2BXOfczQh4m9NFJ6NCp%2BCL8b43wO17x04rjIkiORH%2FrhZVv6uTN02nIdA%3D%3D&response-content-disposition=attachment%3B+filename%3D%22Screen_Recording_20220315-223944_YouTube.mp4%22%3B+filename%2A%3DUTF-8%27%27Screen_Recording_20220315-223944_YouTube.mp4",
                                    preview_image_url="https://ppt.cc/fFzacx@.jpg")
     elif(reply_text == "-69"):
