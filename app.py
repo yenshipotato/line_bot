@@ -8,6 +8,8 @@
 #import datetime
 import os
 import random
+import plurk
+import plurkNM
 #import codecs
 #import sys
 #import json
@@ -57,7 +59,8 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    print(event)
+    # 15754506059298
+    print(event.source.user_id)
     text = event.message.text
 
     if (text == "奕丞" or text == '冠毅'):
@@ -69,9 +72,15 @@ def handle_message(event):
         reply_text = "-3"
     elif(text == "御倫" or text == "鞋子"):
         reply_text = "-4"
-
+    elif(text == "紅豆" or text == "手拋紅豆"):
+        reply_text = "-5"
+    elif(text == "崇發" or text == "重發"):
+        reply_text = "-6"
+    elif(text == "什麼意思"):
+        reply_text = "-69"
     elif(text == "yhboys"):
         reply_text = "同性戀姦淫"
+
     elif(text == "塵抑"):
         reply_text = "叫三小 老娘忙著做愛你知道嗎"
     elif(text == "晨瑋"):
@@ -80,10 +89,22 @@ def handle_message(event):
         reply_text = "臭大奶婊子"
     elif(text == "文賓"):
         reply_text = "只剩顏值的智障馬鈴薯"
+    elif(text == "御倫"):
+        reply_text = "誰?"
     elif(text == "抽"):
         reply_text = "抽你媽B啦幹 當老娘情色機器人膩"
     elif("slut_ " in text):
+
         reply_text = slut.strtslut(text)
+    elif("發噗 " == text[0:3]):
+        if(event.source.user_id == 'Uf98201bfc7c87d4641666f0565a6094f'):
+            print(plurk.plurkAdd(text[3::]))
+            reply_text = "發囉 懶蟲"
+        elif(event.source.user_id == "Uc0deeee84c1c50ea2c87db028215e87b"):
+            print(plurkNM.plurkAdd(text[3::]))
+            reply_text = "發囉 懶奶"
+        else:
+            reply_text = "沒有你的噗浪權限喔 哈哈 笑死"
     else:
         if len(text) > 30:
             reply_text = dev.pros(text)  # 如果非以上的選項，就call respond()
@@ -98,6 +119,14 @@ def handle_message(event):
     elif(reply_text == "-4"):
         message = ImageSendMessage(original_content_url="https://ppt.cc/fDtsNx@.jpg",
                                    preview_image_url="https://ppt.cc/fDtsNx@.jpg")
+    elif(reply_text == "-5"):
+        message = AudioSendMessage(original_content_url="https://doc-0o-ao-docs.googleusercontent.com/docs/securesc/oli48j0aff87qgemnh96jj8kf94r6pv1/7q03sfo7hvoil76ehl407gerhbockn5j/1647434700000/08900282080025306965/00208019747079213226/1UQBnJYkezBaEAgSmzYJsIkeSYgdPQ0Xo?e=download&ax=ACxEAsayBMd__0miST-P8hL10zVG8Ul1JRBGUMDOu3sr-RRUy2z_vZTTRUfslhTdOgAyy2IzMpku4adhDKOHUq18EML1rOU2zHrJCHecVuwddiGzuU7YaMi_YKn5CqGNUkWomnS84G2YVgMraTi8Gx3AFFWEDPAkWP7J5OHKj4QTGymb_adAI4RRYDj_TXVAlzhvo5uG2dipuyi_rCf75pCFpceh6m5h71e1VZD3UhFDuJWfIi618RYg1gtuhR2IUTs1_FWBjkwwKJbgRJnniPUOX_5ncAaBkbVoqbirHR31o2_oLgM6O3mgFQknPJJ-BkDtmT3PUMtHIy1dw0QS-QhcBJAODRQoX3CVTEHHqyHb5dUGp37eov3K-Ch8V7gJ6BZrqpx09rfC53_wHEqc72i7xIvgWAQt65vA4hP3JRJZhxrkVKZ9iuKMCZ3ozWkTLZjNSBhnTQfAr0QB63WUMnSeTC9h7iIYujbJKtt08YV9r9iG_qnS5b-27Tl37rNhv9Utep0_wLOWs3ujBt2Of5G7oe9DAO8M5Ym7lzH3Wm176pBLXsNCfrzNjWfK46RgVawGcJqdJe3N1LL8MRakbYbC6VUNo2gNiRyezFhu0F3kbs2tH-WjGgtAs9tNkwErYRMMYVSzX8JgyDEYrl32cDxBEiF4RGMw9vurZ078ZhA&authuser=0", duration=220000)
+    elif(reply_text == "-6"):
+        message = VideoSendMessage(original_content_url="https://storage.risu.io/EZWiLG6a4kTPjg1KBr7pHj5r?GoogleAccessId=storage%40risu-248412.iam.gserviceaccount.com&Expires=1647445592&Signature=Py9wDh9ZRPVzF1iiyUpQt0gdNK2%2BDgxRDq%2BaMV8wzXvyYW6YPOO179AVd6%2Fl0xjmTsH9JhtodBQZQH%2BQKSHCQrg8EJYLLKSXz5luouHH4xE%2BVQgCneVzfwgp80ZjzNw%2FJevY8PSalr4EslEjHPdFCz4uTGJv5mVtdmaUr1k4SFWNCy13eTz%2BDa4qthYqdMdYwilBAQOHqvZrJ5GRw3iKL2zsZep0xPoTXIMC5OutDgdpE9p4Rsoc7u5f9URaMf6mhxSeJ%2FEBD5DMLjTsHzCU2FArQ9KNZF%2BXOfczQh4m9NFJ6NCp%2BCL8b43wO17x04rjIkiORH%2FrhZVv6uTN02nIdA%3D%3D&response-content-disposition=attachment%3B+filename%3D%22Screen_Recording_20220315-223944_YouTube.mp4%22%3B+filename%2A%3DUTF-8%27%27Screen_Recording_20220315-223944_YouTube.mp4",
+                                   preview_image_url="https://ppt.cc/fFzacx@.jpg")
+    elif(reply_text == "-69"):
+        message = ImageSendMessage(original_content_url="https://ppt.cc/fRybxx@.jpg",
+                                   preview_image_url="https://ppt.cc/fRybxx@.jpg")
     elif(reply_text != "-2"):
         message = TextSendMessage(reply_text)
 ##################################################################################################################################################
